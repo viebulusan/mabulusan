@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>V | PORTFOLIO</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,12 +20,19 @@
             font-family: 'Inter', sans-serif;
         }
 
-        h1,
+        h1{
+            font-family: 'Poppins', sans-serif;
+        }
+        
         h2 {
             font-family: 'Poppins', sans-serif;
         }
 
-        html,
+        html {
+            overflow-x: hidden;
+            background-color: #111318;
+
+        }
         body {
             overflow-x: hidden;
             background-color: #111318;
@@ -112,7 +119,7 @@
         }
 
 
-        .profile-photo:hover {
+        .profile-photo: hover {
             transform: scale(1.03);
             box-shadow: 0 0 35px rgba(255, 192, 203, 0.7);
         }
@@ -137,7 +144,7 @@
             transition: transform 0.3s ease, background-color 0.3s ease;
         }
 
-        .social-links a:hover {
+        .social-links a: hover {
             transform: translateY(-4px);
             background-color: pink;
         }
@@ -296,16 +303,31 @@
             display: block;
         }
 
-        .first-project,
-        .second-project,
-        .third-project,
+        .first-project {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .second-project{
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .third-project {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
         .fourt-project {
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .first-project:hover,
-        .second-project:hover,
-        .third-project:hover,
+        .first-project:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+        }
+        .second-project:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+        }
+        .third-project:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+        }
         .fourt-project:hover {
             transform: translateY(-8px);
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
@@ -352,7 +374,7 @@
             transition: transform 0.3s ease, background-color 0.3s ease;
         }
 
-        .social-links-contact a:hover {
+        .social-links-contact a: hover {
             transform: translateY(-4px);
             background-color: pink;
         }
@@ -453,7 +475,11 @@
             padding-top: 150px;
         }
 
-        .contact-detail-loc,
+        .contact-detail-loc {
+            color: #8f9199;
+            font-size: 15px;
+            margin-top: 15px;
+        }
         .contact-detail-email {
             color: #8f9199;
             font-size: 15px;
@@ -563,7 +589,7 @@
             padding: 8px 10px;
         }
 
-        .burger-menu a:hover {
+        .burger-menu a :hover {
             color: pink;
         }
 
@@ -626,8 +652,14 @@
                 margin: 20px 0 0;
             }
 
-            .Skill,
-            .project,
+            .Skill {
+                height: auto;
+                padding: 60px 0;
+            }
+            .project {
+                height: auto;
+                padding: 60px 0;
+            }
             .certificates {
                 height: auto;
                 padding: 60px 0;
@@ -654,9 +686,24 @@
                 margin: 0 auto;
             }
 
-            .contact-title,
-            .contact-subtitle,
-            .contact-detail-loc,
+            .contact-title {
+                position: relative;
+                top: auto;
+                left: auto;
+                margin: 10px auto 0;
+            }
+            .contact-subtitle  {
+                position: relative;
+                top: auto;
+                left: auto;
+                margin: 10px auto 0;
+            }
+            .contact-detail-loc  {
+                position: relative;
+                top: auto;
+                left: auto;
+                margin: 10px auto 0;
+            }
             .contact-detail-email {
                 position: relative;
                 top: auto;
@@ -676,15 +723,25 @@
                 max-width: 400px;
             }
 
-            .name,
-            .email,
-            .message,
+            .name {
+                width: 100%;
+            }
+            .email{
+                width: 100%;
+            }
+            .message{
+                width: 100%;
+            }
             .submit-btn {
                 width: 100%;
             }
 
-            .name-input,
-            .email-input,
+            .name-input  {
+                width: 95%;
+            }
+            .email-input  {
+                width: 95%;
+            }
             .message-input {
                 width: 95%;
             }
