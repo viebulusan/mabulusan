@@ -1,0 +1,1007 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+
+            font-family: 'Inter', sans-serif;
+        }
+
+        h1,
+        h2 {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        html,
+        body {
+            overflow-x: hidden;
+             background-color: #111318;
+
+        }
+
+
+        section {
+            width: 100%;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .nav {
+            position: fixed;
+            top: 10px;
+            width: 100%;
+            left: 0;
+            display: flex;
+            justify-content: center;
+            z-index: 9999;
+        }
+
+        .navlink {
+            display: flex;
+            gap: 30px;
+            font-size: 20px;
+        }
+
+        .navlink a {
+            color: white;
+            text-decoration: none;
+        }
+
+        #home:target~.nav .navlink a[href="#home"],
+        #skills:target~.nav .navlink a[href="#skills"],
+        #projects:target~.nav .navlink a[href="#projects"],
+        #contacts:target~.nav .navlink a[href="#contacts"] {
+            color: pink;
+        }
+
+        .nav-container {
+            width: 550px;
+            height: 50px;
+            background-color: #1d212a;
+            border: 0.5px solid rgb(77, 72, 72);
+            margin-top: 20px;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: fixed;
+        }
+
+        .Home {
+            background-color: #111318;
+            height: 100vh;
+            background-image:
+                linear-gradient(rgba(77, 72, 72, 0.25) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(77, 72, 72, 0.25) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+
+        .home-flex {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 100px;
+            min-height: 100vh;
+            padding-top: 80px;
+        }
+
+
+        .profile-photo {
+            width: 200px;
+            border-radius: 10px;
+            border: 5px solid pink;
+            box-shadow: 0 0 25px rgba(135, 130, 131, 0.5);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+
+        .profile-photo:hover {
+            transform: scale(1.03);
+            box-shadow: 0 0 35px rgba(255, 192, 203, 0.7);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .social-links a {
+            width: 45px;
+            height: 45px;
+            background-color: #1d212b;
+            border: 1px solid rgb(77, 72, 72);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            color: white;
+            text-decoration: none;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            transform: translateY(-4px);
+            background-color: pink;
+        }
+
+        .home-content {
+            color: white;
+            font-size: 10px;
+            max-width: 650px;
+        }
+
+        .intro-name {
+            color: white;
+            font-size: 50px;
+        }
+
+
+        .para {
+            color: #58585a;
+        }
+
+        .home-visual {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            flex-shrink: 0;
+        }
+
+        .Skill {
+            background-color: #171a21;
+            height: auto;
+            padding: 120px 0 80px;
+            background-image:
+                linear-gradient(rgba(77, 72, 72, 0.25) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(77, 72, 72, 0.25) 1px, transparent 1px);
+            background-size: 40px 40px;
+
+        }
+
+        .skills-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 80px;
+            padding-bottom: 60px;
+        }
+
+        .skill-card {
+            width: 140px;
+            height: 140px;
+            background-color: #1d212b;
+            border: 1px solid rgb(77, 72, 72);
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+
+        .skill-card i {
+            font-size: 60px;
+            margin-bottom: 10px;
+        }
+
+        .title-lang {
+            color: white;
+            display: flex;
+            justify-content: center;
+            position: relative;
+            top: 50px;
+        }
+
+        .skill-cardtools {
+            width: 140px;
+            height: 140px;
+            background: #1d212b;
+            border: 1px solid rgb(77, 72, 72);
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+
+        .skill-cardtools i {
+            font-size: 60px;
+            margin-bottom: 10px;
+        }
+
+
+
+        .project {
+            background-color: #111318;
+            height: 80vh;
+            background-image:
+                linear-gradient(rgba(77, 72, 72, 0.25) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(77, 72, 72, 0.25) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+
+        .project h1 {
+            color: white;
+            text-align: center;
+            padding-top: 100px;
+        }
+
+        .project-container {
+            display: flex;
+            gap: 20px;
+            margin-top: 50px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .first-project {
+            background-color: #1d212b;
+            width: 250px;
+            height: 300px;
+            border-radius: 10px;
+            border: 1px solid rgb(77, 72, 72);
+            padding: 20px;
+        }
+
+        .second-project {
+            background-color: #1d212b;
+            width: 250px;
+            height: 300px;
+            border-radius: 10px;
+            border: 1px solid rgb(77, 72, 72);
+            padding: 20px;
+        }
+
+        .third-project {
+            background-color: #1d212b;
+            width: 250px;
+            height: 300px;
+            border-radius: 10px;
+            border: 1px solid rgb(77, 72, 72);
+            padding: 20px;
+        }
+
+        .fourt-project {
+            background-color: #1d212b;
+            width: 250px;
+            height: 300px;
+            border-radius: 10px;
+            border: 1px solid rgb(77, 72, 72);
+            padding: 20px;
+        }
+
+        .project-link {
+            text-decoration: none;
+            display: block;
+        }
+
+        .first-project,
+        .second-project,
+        .third-project,
+        .fourt-project {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .first-project:hover,
+        .second-project:hover,
+        .third-project:hover,
+        .fourt-project:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+        }
+
+        .project-title {
+            color: white;
+            margin-top: 20px;
+        }
+
+        .project-description {
+            color: #8f9199;
+            margin-top: 15px;
+        }
+
+        .Contact {
+            background-color: #171a21;
+            height: 100vh;
+            background-image:
+                linear-gradient(rgba(77, 72, 72, 0.25) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(77, 72, 72, 0.25) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+
+        .social-links-contact {
+            display: flex;
+            position: absolute;
+            top: 3440px;
+            gap: 30px;
+            left: 300px;
+        }
+
+        .social-links-contact a {
+            width: 45px;
+            height: 45px;
+            background-color: #1d212b;
+            border: 1px solid rgb(77, 72, 72);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            color: white;
+            text-decoration: none;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .social-links-contact a:hover {
+            transform: translateY(-4px);
+            background-color: pink;
+        }
+
+        .name {
+            background-color: white;
+            width: 400px;
+            height: 40px;
+            margin-top: 20px;
+            top: 70px;
+            border-radius: 10px;
+        }
+
+        .name-input {
+            display: flex;
+            position: relative;
+            top: 5px;
+            width: 390px;
+            height: 30px;
+            border: none;
+            background-color: transparent;
+            left: 5px;
+            outline: none;
+        }
+
+        .email {
+            background-color: white;
+            width: 400px;
+            height: 40px;
+            margin-top: 20px;
+            left: 0;
+            top: 90px;
+            border-radius: 10px;
+        }
+
+        .email-input {
+            display: flex;
+            position: relative;
+            top: 5px;
+            width: 390px;
+            height: 30px;
+            border: none;
+            left: 5px;
+            background-color: transparent;
+            outline: none;
+        }
+
+
+        .message {
+            background-color: white;
+            width: 400px;
+            height: 250px;
+            margin-top: 20px;
+            top: 110px;
+            border-radius: 10px;
+        }
+
+        .message-input {
+            width: 390px;
+            height: 239px;
+            position: relative;
+            left: 5px;
+            top: 5px;
+            outline: none;
+            border: none;
+            background-color: transparent;
+            resize: none;
+        }
+
+        .form-container {
+            flex: 1;
+            margin-left: 0;
+            position: relative;
+            top: -0px;
+        }
+
+        .contact-title {
+            color: white;
+            font-size: 36px;
+            position: absolute;
+            top: 3150px;
+            left: 300px;
+        }
+
+        .contact-info {
+            flex: 1;
+        }
+
+        .contact-subtitle {
+            color: #8f9199;
+            font-size: 16px;
+            margin-top: 20px;
+            max-width: 350px;
+            position: absolute;
+            top: 3200px;
+            left: 300px;
+        }
+
+        .contact-wrapper {
+            display: flex;
+            gap: 80px;
+            padding-top: 150px;
+        }
+
+        .contact-detail-email {
+            color: #8f9199;
+            font-size: 15px;
+            margin-top: 15px;
+            position: absolute;
+            top: 3280px;
+            left: 300px;
+        }
+
+        .contact-detail-loc {
+            color: #8f9199;
+            font-size: 15px;
+            margin-top: 15px;
+            position: absolute;
+            top: 3250px;
+            left: 300px;
+        }
+
+        .submit-btn {
+            width: 400px;
+            height: 45px;
+            margin-top: 20px;
+            top: 130px;
+            background-color: pink;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .submit-btn:hover {
+            background-color: #ff9ec2;
+        }
+
+        .certificates {
+            background-color: #111318;
+            height: 130vh;
+            background-image:
+                linear-gradient(rgba(77, 72, 72, 0.25) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(77, 72, 72, 0.25) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+
+        .cert-heading {
+            color: white;
+            text-align: center;
+            padding-top: 100px;
+        }
+
+        .contact-info q {
+            display: block;
+            color: pink;
+            font-style: italic;
+            font-size: 20px;
+            margin-top: 250px;
+            margin-left: 130px;
+            opacity: 0.85;
+        }
+
+        .cert-container {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            margin-top: 50px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cert-img {
+            width: 280px;
+            border-radius: 10px;
+            border: 1px solid rgb(77, 72, 72);
+        }
+
+        .burger {
+            display: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 8px;
+            background-color: #1d212a;
+            border: 0.5px solid rgb(77, 72, 72);
+            color: white;
+            font-size: 22px;
+            cursor: pointer;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 10000;
+        }
+
+        .burger-menu {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            position: fixed;
+            top: 80px;
+            right: 20px;
+            z-index: 9999;
+            background-color: #1d212a;
+            border: 0.5px solid rgb(77, 72, 72);
+            border-radius: 8px;
+            padding: 15px;
+            opacity: 0;
+            transform: translateY(-10px);
+            pointer-events: none;
+            transition: opacity 0.25s ease, transform 0.25s ease;
+        }
+
+        .burger-menu.show {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+
+        .burger-menu a {
+            color: white;
+            text-decoration: none;
+            font-size: 15px;
+            padding: 8px 10px;
+        }
+
+        .burger-menu a:hover {
+            color: pink;
+        }
+
+        @media (max-width: 1280px) {
+            .line-break {
+                display: none;
+            }
+
+            .home-flex {
+                flex-direction: column-reverse;
+                text-align: center;
+                padding-top: 100px;
+                min-height: auto;
+                padding-bottom: 60px;
+                gap: 30px;
+            }
+
+            .nav-container {
+                display: none;
+            }
+
+            .burger {
+                display: block;
+            }
+
+            .Home {
+                height: auto;
+                padding: 0 0 60px;
+            }
+
+            .profile-photo {
+                position: relative;
+                right: auto;
+                top: auto;
+                margin: 0 auto 30px;
+                display: block;
+            }
+
+            .home-content {
+                position: relative;
+                left: auto;
+                top: auto;
+                text-align: center;
+                padding: 0 20px;
+            }
+
+            .intro-name {
+                font-size: 34px;
+            }
+
+            .para {
+                font-size: 14px;
+            }
+
+            .social-links {
+                position: relative;
+                right: auto;
+                top: auto;
+                justify-content: center;
+                margin: 20px 0 0;
+            }
+
+            .Skill,
+            .project,
+            .certificates {
+                height: auto;
+                padding: 60px 0;
+            }
+
+            .cert-img {
+                width: 90%;
+                max-width: 320px;
+            }
+
+            .Contact {
+                height: auto;
+                padding: 100px 0 60px;
+            }
+
+            .contact-wrapper {
+                flex-direction: column;
+                gap: 40px;
+                padding-top: 0;
+                text-align: center;
+            }
+
+            .contact-title,
+            .contact-subtitle,
+            .contact-detail-loc,
+            .contact-detail-email {
+                position: relative;
+                top: auto;
+                left: auto;
+                margin: 10px auto 0;
+            }
+
+            .contact-info q {
+                margin-left: 0;
+                margin-top: 15px;
+            }
+
+            .form-container {
+                top: auto;
+                margin: 0 auto;
+                width: 100%;
+                max-width: 400px;
+            }
+
+            .name,
+            .email,
+            .message,
+            .submit-btn {
+                width: 100%;
+            }
+
+            .name-input,
+            .email-input,
+            .message-input {
+                width: 95%;
+            }
+
+            .social-links-contact {
+                position: relative;
+                top: auto;
+                left: auto;
+                justify-content: center;
+                margin: 20px auto 0;
+            }
+        }
+
+        .foot {
+            color: white;
+            font-size: 14px;
+            text-align: center;
+            margin-top: 60px;
+            opacity: 0.4;
+        }
+
+        .toast {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #1d212a;
+            color: white;
+            padding: 14px 28px;
+            border-radius: 40px;
+            border: 1px solid pink;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+            font-size: 15px;
+            z-index: 99999;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+
+        .toast.show {
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="nav">
+        <div class="nav-container">
+            <nav class="navlink">
+                <a href="#home">Home</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#certificates">Certificates</a>
+                <a href="#contacts">Contact</a>
+            </nav>
+        </div>
+        <button class="burger" onclick="document.querySelector('.burger-menu').classList.toggle('show')">☰</button>
+        <div class="burger-menu">
+            <a href="#home">Home</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#certificates">Certificates</a>
+            <a href="#contacts">Contact</a>
+        </div>
+    </header>
+
+    <section class="Home" id="home">
+        <div class="container home-flex">
+            <div class="home-content">
+                <h1>
+                    <span class="intro-name">Hi, I'm Vie. </span> <br />
+                    <span class="para">3rd Year BSCS Student<br class="line-break">Cagayan State University, Carig
+                        Campus
+                        <br class="line-break" />
+                        <br class="line-break" />
+                        I'm passionate about technology, software development,<br class="line-break" />
+                        and continuous learning.<br class="line-break" /><br class="line-break">
+                        Currently exploring:<br class="line-break">cybersecurity fundamentals & backend development.
+                        <br class="line-break"> I enjoy exploring new ideas, solving problems,<br class="line-break" />
+                        and turning concepts into real applications<br class="line-break"> that make a difference
+                        —<br class="line-break" />
+                        and I want to understand how things work beyond<br class="line-break" />
+                        what people see on the surface.</span>
+                </h1>
+            </div>
+            <div class="home-visual">
+                <img src="756e85e9-b15f-4ada-88c7-b7e8bc02305d.jpg" alt="" class="profile-photo" />
+                <div class="social-links">
+                    <a href="https://github.com/viebulusan" target="_blank"><i class="devicon-github-original"></i></a>
+                    <a href="https://linkedin.com/in/bulusan-mark-arvie" target="_blank"><i
+                            class="devicon-linkedin-plain colored"></i></a>
+                    <a href="mailto:bulusanarvie1@gmail.com"><i class="devicon-google-plain colored"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="Skill" id="skills">
+        <div class="container">
+            <h1 class="title-lang">Programming Languages & Tools</h1>
+            <div class="skills-container">
+                <div class="skill-card">
+                    <i class="devicon-html5-plain colored"></i>
+                    <h3>HTML</h3>
+                </div>
+
+                <div class="skill-card">
+                    <i class="devicon-css3-plain colored"></i>
+                    <h3>CSS</h3>
+                </div>
+
+                <div class="skill-card">
+                    <i class="devicon-javascript-plain colored"></i>
+                    <h3>JavaScript</h3>
+                </div>
+
+                <div class="skill-card">
+                    <i class="devicon-csharp-plain colored"></i>
+                    <h3>C#</h3>
+                </div>
+
+                <div class="skill-card">
+                    <i class="devicon-java-plain colored"></i>
+                    <h3>Java</h3>
+                </div>
+
+                <div class="skill-card">
+                    <i class="devicon-python-plain colored"></i>
+                    <h3>Python</h3>
+                </div>
+
+                <div class="skill-card">
+                    <i class="devicon-mysql-plain colored"></i>
+                    <h3>SQL</h3>
+                </div>
+
+                <div class="skill-cardtools">
+                    <i class="devicon-vercel-original"></i>
+                    <h3>Vercel</h3>
+                </div>
+
+                <div class="skill-cardtools">
+                    <i class="devicon-vscode-plain colored"></i>
+                    <h3>VS Code</h3>
+                </div>
+
+                <div class="skill-cardtools">
+                    <i class="devicon-git-plain colored"></i>
+                    <h3>Git</h3>
+                </div>
+
+                <div class="skill-cardtools">
+                    <i class="devicon-github-original"></i>
+                    <h3>GitHub</h3>
+                </div>
+
+                <div class="skill-cardtools">
+                    <i class="devicon-mysql-plain colored"></i>
+                    <h3>MySQL</h3>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+
+    <section class="project" id="projects">
+        <div class="container">
+            <h1>Projects</h1>
+            <div class="project-container">
+                <a href="https://github.com/viebulusan/mabulusan" target="_blank" class="project-link">
+                    <div class="first-project">
+                        <h2 class="project-title">Portfolio Website</h2>
+                        <p class="project-description">
+                            Personal portfolio website built using HTML and CSS.
+                        </p>
+                    </div>
+                </a>
+
+                <a href="https://github.com/viebulusan/QR-attendance" target="_blank" class="project-link">
+                    <div class="second-project">
+                        <h2 class="project-title">Student System</h2>
+                        <p class="project-description">
+                            A simple student management system project using QR.
+                        </p>
+                    </div>
+                </a>
+
+                <a href="https://github.com/viebulusan/secuSHIFT" target="_blank" class="project-link">
+                    <div class="third-project">
+                        <h2 class="project-title">secuSHIFT</h2>
+                        <p class="project-description">
+                            SecuShift: Password Encryption Using Caesar Cipher Algorithm
+                        </p>
+                    </div>
+                </a>
+
+                <div class="fourt-project">
+                    <h2 class="project-title">Coming Soon</h2>
+                    <p class="project-description">
+                        More projects will be added here soon.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="certificates" id="certificates">
+        <div class="container">
+            <h1 class="cert-heading">Certificates</h1>
+            <div class="cert-container">
+                <img src="778d1257-0573-47fa-83af-b7b876128ef1.jpg" class="cert-img" />
+
+                <img src="ae631078-6898-423a-94db-50e704bf5907.jpg" class="cert-img" />
+                <img src="e235fbd8-1f3a-4cd2-8871-2e46720a2eb4.jpg" class="cert-img" />
+                <img src="7fd2e214-d8a0-4d69-8f03-4fce9ca2bb62.jpg" class="cert-img" />
+                <img src="e40382da-9cc5-46ca-8750-9bcf69023568.jpg" class="cert-img" />
+                <img src="Screenshot 2026-07-08 181238.png" class="cert-img" />
+
+            </div>
+        </div>
+    </section>
+
+    <section class="Contact" id="contacts">
+        <div class="container">
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <h1 class="contact-title">Let's Talk</h1>
+                    <p class="contact-subtitle">Have a project in mind or just want to say hi? Send me a message below.
+                    </p>
+                    <p class="contact-detail-loc">📍 Cagayan, Philippines</p>
+                    <p class="contact-detail-email">✉️ bulusanarvie1@gmail.com</p>
+                    <q>Curious by nature, developer by choice.</q>
+                    <div class="social-links-contact">
+                        <a href="https://github.com/viebulusan" target="_blank"><i
+                                class="devicon-github-original"></i></a>
+                        <a href="https://linkedin.com/in/bulusan-mark-arvie" target="_blank"><i
+                                class="devicon-linkedin-plain colored"></i></a>
+                        <a href="mailto:bulusanarvie1@gmail.com"><i class="devicon-google-plain colored"></i></a>
+                    </div>
+                </div>
+                <div class="form-container">
+                    <form id="contactForm" action="https://formspree.io/f/mnjkklno" method="POST">
+                        <div class="name">
+                            <input type="text" name="name" class="name-input" placeholder="NAME" required />
+                        </div>
+                        <div class="email">
+                            <input type="email" name="email" class="email-input" placeholder="EMAIL" required />
+                        </div>
+                        <div class="message">
+                            <textarea name="message" class="message-input" placeholder="MESSAGE" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
+                    <div id="toast" class="toast">Message sent successfully!</div>
+                </div>
+            </div>
+            <h2 class="foot">&copy; 2026 Mark Arvie</h2>
+        </div>
+    </section>
+
+</body>
+
+<script>
+    (function () {
+        const form = document.getElementById('contactForm');
+        const toast = document.getElementById('toast');
+
+        function showToast(msg) {
+            toast.textContent = msg || 'Message sent successfully!';
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), 4000);
+        }
+
+        form.addEventListener('submit', async function (e) {
+            e.preventDefault();
+
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData.entries());
+
+            if (!data.name || !data.email || !data.message) {
+                showToast('Please fill in all fields.');
+                return;
+            }
+
+            try {
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: JSON.stringify(data),
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    showToast('Message sent successfully!');
+                    form.reset();
+                } else {
+                    showToast('Something went wrong. Try again.');
+                }
+            } catch (error) {
+                showToast('Network error. Please check your connection.');
+            }
+        });
+    })();
+</script>
+
+</html>
